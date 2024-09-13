@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="src/dist/main.bundle.js" defer></script>
+    <script src="src/dist/runtime.bundle.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content content__heading">
+        <div class="banner">
+          <h1 class="banner__title">Thienan Tran</h1>
+        </div>
+      </div>
+      <div class="content content__body">
+        <div class="column column--left">
+          <div class="section section--profile-picture">
+            <img
+              class="section__image"
+              src="src/assets/surfing.jpg"
+              alt="Profile Picture"
+            />
+          </div>
+          <div class="section section--socials">
+            <h2 class="section__title">Socials</h2>
+            <ul class="section__content section__list">
+              <li class="section__item">
+                <a href="https://www.linkedin.com/in/thienan-tran-35176620b/">
+                  <img
+                    src="src/assets/linkedin-logo.png"
+                    class="section__social section__social--linkedin"
+                  />
+                </a>
+              </li>
+              <li class="section__item">
+                <a href="https://github.com/thienantran010">
+                  <img
+                    src="src/assets/github-logo.png"
+                    class="section__social section__social--github"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="section section--interests">
+            <h2 class="section__title">Interests</h2>
+            <div class="section__grid section__grid--interests">
+              <div class="section__grid__item section__grid__item--category">
+                Physical Activity
+              </div>
+              <div class="section__grid__item section__grid__item--examples">
+                Volleyball
+              </div>
+              <div class="section__grid__item section__grid__item--category">
+                Television
+              </div>
+              <div class="section__grid__item section__grid__item--examples">
+                TikTok
+              </div>
+              <div class="section__grid__item section__grid__item--category">
+                Books
+              </div>
+              <div class="section__grid__item section__grid__item--examples">
+                Salt, Fat, Acid, Heat; C Programming: A Modern Approach; System
+                Design
+              </div>
+              <div class="section__grid__item section__grid__item--category">
+                Music
+              </div>
+
+              <div class="section__grid__item section__grid__item--examples">
+                Pop
+              </div>
+            </div>
+          </div>
+          <div class="section section--hits">
+            <h2 class="section__title section__title--hits">
+              Number Of Site Visits
+            </h2>
+            <div class="section__content section__content--hits">
+              <span class="number-of-hits">-</span>
+            </div>
+          </div>
+        </div>
+        <div class="column column--right">
+          <div class="section section--stream">
+            <h2 class="section__title">Stream of Consciousness</h2>
+            <div class="section__content section__content--stream">
+              <article class="blurb blurb--stream">
+                <div class="blurb__name">Thienan</div>
+                <div class="blurb__date">Fri Jul 05 2024</div>
+                <div class="blurb__content">
+                  I feel like my internship has taught me more about myself than
+                  about coding 🤔
+                </div>
+              </article>
+              <article class="blurb blurb--stream">
+                <div class="blurb__name">Thienan</div>
+                <div class="blurb__date">Fri Jul 05 2024</div>
+                <div class="blurb__content">
+                  Maybe I shouldn't have taking so many volleyball classes...
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="section section--about-me">
+            <h2 class="section__title section__title--about-me">About Me</h2>
+            <div class="section__content section__content--about-me">
+              <p class="section--about-me__paragraph">
+                Welcome to my personal website! I graduated from Boston
+                University with a BA in Computer Science. Currently, I'm a
+                Junior Software Engineer at Pelicargo, where I've honed my
+                skills in React, TypeScript, and Prisma, delivering rapid
+                solutions and integrating essential tools to enhance
+                productivity.
+              </p>
+
+              <p class="section--about-me__paragraph">
+                My projects showcase my diverse expertise, from building a
+                full-stack Mafia Mystery Web App with real-time communication
+                and JWT authentication to creating Crown, a mobile app that
+                provides resources for people with textured hair. Additionally,
+                I've developed MeetDeetz, an Android app leveraging Kotlin and
+                Firebase for seamless event management, and Photoshare, a social
+                app powered by a robust Python and MySQL backend.
+              </p>
+
+              <p class="section--about-me__paragraph">
+                With a strong foundation in JavaScript, TypeScript, and Python,
+                and experience with tools like Git and VS Code, I'm passionate
+                about crafting innovative solutions that make a difference. Take
+                a peek at my
+                <a
+                  href="src/assets/Thienan_Tran_resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >resume</a
+                >
+                to learn more about my experiences.
+              </p>
+            </div>
+          </div>
+          <div class="section section--messages">
+            <h2 class="section__title section__title--messages">Messages</h2>
+            <div class="section__content section__content__container--messages">
+              <div class="section__content--messages"></div>
+              <form id="blurb-form" class="blurb-form">
+                <div class="blurb-form__inputs">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="blurb-form__name-input"
+                    placeholder="Your Name"
+                    required
+                  />
+                  <textarea
+                    id="message"
+                    name="message"
+                    class="blurb-form__message-input"
+                    placeholder="Your Message"
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit">Add Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

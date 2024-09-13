@@ -1,0 +1,282 @@
+:root {
+  --primary-color: #ffffff; /* White */
+  --secondary-color: #1da1f2; /* Twitter blue (formerly accent color) */
+  --accent-color: #000000; /* Black (formerly secondary color) */
+  --accent-color-2: #e0218a; /* Barbie pink */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: large;
+  background-color: #e0e0e0;
+  color: var(--accent-color);
+  display: flex;
+  flex-direction: column; /* Ensure vertical alignment of elements */
+  align-items: center;
+  height: 100vh;
+}
+
+a {
+  color: var(--accent-color-2);
+}
+
+img {
+  display: block;
+}
+
+.container {
+  background-color: var(--primary-color);
+  max-width: 1000px;
+}
+
+.content__heading {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  text-align: center;
+  padding: var(--spacing-2) 0;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.content__body {
+  display: flex;
+  width: 100%;
+  background-color: var(--primary-color);
+  padding: 0 var(--spacing-3);
+}
+
+.column {
+  flex: 1;
+}
+
+.column--left {
+  flex: 40%;
+  margin-right: 20px;
+}
+
+.column--right {
+  flex: 60%; /* Right column takes 70% of the container */
+}
+
+.section {
+  margin-bottom: 20px;
+  border: 1px solid #ddd; /* Border around each section */
+}
+
+.section__title {
+  font-size: 20px; /* Smaller font size */
+  background-color: var(--secondary-color); /* Twitter blue */
+  color: var(--primary-color);
+  padding: 0 var(--spacing-1); /* No padding */
+  width: 100%; /* Full width */
+}
+
+.section__content {
+  padding: var(--spacing-3);
+}
+
+/* Profile picture section */
+.section__image {
+  width: 100%;
+  display: block;
+}
+
+/* Socials section */
+.section__social {
+  max-width: 50px;
+  margin-right: var(--spacing-3);
+}
+
+.section__list {
+  list-style-type: none;
+  display: flex;
+}
+
+/* Interests section */
+.section__grid {
+  /* Locally scoped variables */
+  --line-offset: calc(var(--gap) / 2);
+  --gap: 2rem;
+  --line-offset: calc(var(--gap) / 2);
+  --line-thickness: 1px;
+  --line-color: black;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.section__grid__item {
+  padding: var(--spacing-3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Add borders to internal grid lines */
+.section__grid__item:not(:nth-child(2n)) {
+  border-right: 1px solid black;
+}
+
+.section__grid__item:not(:nth-last-child(-n + 2)) {
+  border-bottom: 1px solid black;
+}
+
+/* Style first row items */
+.section__grid__item:nth-child(1),
+.section__grid__item:nth-child(2) {
+  border-top: none;
+}
+
+/* Style first column items */
+.section__grid__item:nth-child(2n + 1) {
+  border-left: none;
+}
+
+/* Style last row items */
+.section__grid__item:nth-last-child(-n + 2) {
+  border-bottom: none;
+}
+
+/* Style last column items */
+.section__grid__item:nth-child(2n) {
+  border-right: none;
+}
+
+/* Number of hits section */
+.section__title--hits {
+  margin: 0;
+}
+
+.section__content--hits {
+  font-size: 60px;
+  padding: var(--spacing-4);
+  text-align: center;
+  background-color: #b5e3ff;
+}
+
+/* Stream of consciousness section */
+.section__content--stream {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.blurb {
+  background-color: #ffeff7;
+  border: 1px solid #e0a3c0;
+  border-radius: 10px;
+  padding: var(--spacing-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.blurb__name {
+  font-weight: bold;
+  color: var(--accent-color-2);
+}
+
+.blurb__date {
+  font-size: 12px;
+  color: #777;
+}
+
+.blurb__content {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Hover and Focus Effects */
+.blurb:hover {
+  background-color: #ffd1e8;
+  border-color: #e0218a;
+}
+
+.blurb:focus-within {
+  outline: 2px solid #e0218a;
+  outline-offset: 2px;
+}
+
+/* About me section */
+.section__title--about-me {
+  margin-bottom: 0;
+}
+
+.section--about-me__paragraph {
+  margin-bottom: var(--spacing-3);
+}
+
+.section--about-me__paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Messages section */
+.section__content__container--messages {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form Styles */
+.blurb-form {
+  display: flex;
+}
+
+.blurb--messages {
+  margin-bottom: var(--spacing-4);
+}
+
+.blurb-form__inputs {
+  flex: column;
+  width: 100%;
+  margin-right: var(--spacing-2);
+}
+
+.blurb-form input,
+.blurb-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  display: block;
+}
+
+.blurb-form__name-input {
+  margin-bottom: var(--spacing-2);
+}
+
+.blurb-form__message-input {
+  resize: none;
+}
+
+.blurb-form button {
+  padding: 10px 15px;
+  background-color: #e0218a;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.blurb-form button:hover {
+  background-color: #c71585;
+}
+
+@media (max-width: 768px) {
+  .content__body {
+    display: flex;
+    flex-direction: column;
+  }
+}
