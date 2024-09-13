@@ -1,0 +1,352 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "ApiStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "ApiStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "ApiStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "ApiStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3593640e714f1f9eb503d7bd7d9faf8aafd1f7708a34272c0eab50dca29e1334.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "ApiStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "ApiStack.assets"
+      ],
+      "metadata": {
+        "/ApiStack": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "If you are relying on AWS SDK v2 to be present in the Lambda environment already, please explicitly configure a NodeJS runtime of Node 16 or lower. [ack: @aws-cdk/aws-lambda-nodejs:sdkV2NotInRuntime]",
+            "trace": [
+              "Annotations.addMessage (C:\\Users\\thien\\cloud-resume-challenge\\api\\node_modules\\aws-cdk-lib\\core\\lib\\annotations.js:1:1608)",
+              "Annotations.addWarningV2 (C:\\Users\\thien\\cloud-resume-challenge\\api\\node_modules\\aws-cdk-lib\\core\\lib\\annotations.js:1:825)",
+              "new Bundling (C:\\Users\\thien\\cloud-resume-challenge\\api\\node_modules\\aws-cdk-lib\\aws-lambda-nodejs\\lib\\bundling.js:1:3503)",
+              "Function.bundle (C:\\Users\\thien\\cloud-resume-challenge\\api\\node_modules\\aws-cdk-lib\\aws-lambda-nodejs\\lib\\bundling.js:1:960)",
+              "new NodejsFunction (C:\\Users\\thien\\cloud-resume-challenge\\api\\node_modules\\aws-cdk-lib\\aws-lambda-nodejs\\lib\\function.js:1:2171)",
+              "ApiStack.getIntegrations (C:\\Users\\thien\\cloud-resume-challenge\\api\\lib\\api-stack.ts:89:30)",
+              "new ApiStack (C:\\Users\\thien\\cloud-resume-challenge\\api\\lib\\api-stack.ts:49:14)",
+              "Object.<anonymous> (C:\\Users\\thien\\cloud-resume-challenge\\api\\bin\\api.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module.m._compile (C:\\Users\\thien\\cloud-resume-challenge\\api\\node_modules\\ts-node\\src\\index.ts:1618:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\thien\\cloud-resume-challenge\\api\\node_modules\\ts-node\\src\\index.ts:1621:12)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "phase4 (C:\\Users\\thien\\cloud-resume-challenge\\api\\node_modules\\ts-node\\src\\bin.ts:649:14)",
+              "bootstrap (C:\\Users\\thien\\cloud-resume-challenge\\api\\node_modules\\ts-node\\src\\bin.ts:95:10)",
+              "main (C:\\Users\\thien\\cloud-resume-challenge\\api\\node_modules\\ts-node\\src\\bin.ts:55:10)",
+              "Object.<anonymous> (C:\\Users\\thien\\cloud-resume-challenge\\api\\node_modules\\ts-node\\src\\bin.ts:800:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/ApiStack/Hits/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HitsFF5AF8CD"
+          }
+        ],
+        "/ApiStack/Messages": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": {
+              "Ref": "Messages804FA4EB"
+            }
+          }
+        ],
+        "/ApiStack/Messages/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Messages804FA4EB"
+          }
+        ],
+        "/ApiStack/helloWorldFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "helloWorldFunctionServiceRole8475DBF0"
+          }
+        ],
+        "/ApiStack/helloWorldFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "helloWorldFunction00C940B5"
+          }
+        ],
+        "/ApiStack/postHitFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "postHitFunctionServiceRole6BB4893C"
+          }
+        ],
+        "/ApiStack/postHitFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "postHitFunctionServiceRoleDefaultPolicy1AA78C26"
+          }
+        ],
+        "/ApiStack/postHitFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "postHitFunctionFD485D85"
+          }
+        ],
+        "/ApiStack/getTotalHitsFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "getTotalHitsFunctionServiceRoleDC8B68D5"
+          }
+        ],
+        "/ApiStack/getTotalHitsFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "getTotalHitsFunctionServiceRoleDefaultPolicy16FAB65E"
+          }
+        ],
+        "/ApiStack/getTotalHitsFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "getTotalHitsFunction096FC1AD"
+          }
+        ],
+        "/ApiStack/postMessageFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "postMessageFunctionServiceRole43693AB0"
+          }
+        ],
+        "/ApiStack/postMessageFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "postMessageFunctionServiceRoleDefaultPolicy3A8AB13B"
+          }
+        ],
+        "/ApiStack/postMessageFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "postMessageFunction9657ED12"
+          }
+        ],
+        "/ApiStack/getMessagesFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "getMessagesFunctionServiceRole1D939B5B"
+          }
+        ],
+        "/ApiStack/getMessagesFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "getMessagesFunctionServiceRoleDefaultPolicyDCC60E4A"
+          }
+        ],
+        "/ApiStack/getMessagesFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "getMessagesFunctionCBE544AC"
+          }
+        ],
+        "/ApiStack/API/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "API62EA1CFF"
+          }
+        ],
+        "/ApiStack/API/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIDeployment0E06874E39375ee4b3e2a73f773e8329d13bb9a3"
+          }
+        ],
+        "/ApiStack/API/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIDeploymentStageprod278E75BA"
+          }
+        ],
+        "/ApiStack/API/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIEndpoint1793E782"
+          }
+        ],
+        "/ApiStack/API/Default/OPTIONS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIOPTIONSCA9FDA90"
+          }
+        ],
+        "/ApiStack/API/Default/GET/ApiPermission.ApiStackAPICE700FF7.GET..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGETApiPermissionApiStackAPICE700FF7GET3E90DB58"
+          }
+        ],
+        "/ApiStack/API/Default/GET/ApiPermission.Test.ApiStackAPICE700FF7.GET..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGETApiPermissionTestApiStackAPICE700FF7GET2751FCA2"
+          }
+        ],
+        "/ApiStack/API/Default/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGET4B2FB1CA"
+          }
+        ],
+        "/ApiStack/API/Default/hits/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIhits5D40C30D"
+          }
+        ],
+        "/ApiStack/API/Default/hits/OPTIONS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIhitsOPTIONS8FB8FCD6"
+          }
+        ],
+        "/ApiStack/API/Default/hits/GET/ApiPermission.ApiStackAPICE700FF7.GET..hits": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIhitsGETApiPermissionApiStackAPICE700FF7GEThits06537773"
+          }
+        ],
+        "/ApiStack/API/Default/hits/GET/ApiPermission.Test.ApiStackAPICE700FF7.GET..hits": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIhitsGETApiPermissionTestApiStackAPICE700FF7GEThits6D28B002"
+          }
+        ],
+        "/ApiStack/API/Default/hits/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIhitsGET982E4EF0"
+          }
+        ],
+        "/ApiStack/API/Default/hits/POST/ApiPermission.ApiStackAPICE700FF7.POST..hits": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIhitsPOSTApiPermissionApiStackAPICE700FF7POSThits25B870A3"
+          }
+        ],
+        "/ApiStack/API/Default/hits/POST/ApiPermission.Test.ApiStackAPICE700FF7.POST..hits": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIhitsPOSTApiPermissionTestApiStackAPICE700FF7POSThitsD4FC0852"
+          }
+        ],
+        "/ApiStack/API/Default/hits/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIhitsPOST03666373"
+          }
+        ],
+        "/ApiStack/API/Default/messages/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APImessagesCDE67788"
+          }
+        ],
+        "/ApiStack/API/Default/messages/OPTIONS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APImessagesOPTIONSD9D2274A"
+          }
+        ],
+        "/ApiStack/API/Default/messages/GET/ApiPermission.ApiStackAPICE700FF7.GET..messages": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APImessagesGETApiPermissionApiStackAPICE700FF7GETmessagesEFE9E527"
+          }
+        ],
+        "/ApiStack/API/Default/messages/GET/ApiPermission.Test.ApiStackAPICE700FF7.GET..messages": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APImessagesGETApiPermissionTestApiStackAPICE700FF7GETmessages6CD8DA15"
+          }
+        ],
+        "/ApiStack/API/Default/messages/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APImessagesGET69DADC53"
+          }
+        ],
+        "/ApiStack/API/Default/messages/POST/ApiPermission.ApiStackAPICE700FF7.POST..messages": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APImessagesPOSTApiPermissionApiStackAPICE700FF7POSTmessages9713A18B"
+          }
+        ],
+        "/ApiStack/API/Default/messages/POST/ApiPermission.Test.ApiStackAPICE700FF7.POST..messages": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APImessagesPOSTApiPermissionTestApiStackAPICE700FF7POSTmessagesDAAE279A"
+          }
+        ],
+        "/ApiStack/API/Default/messages/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APImessagesPOSTE7359F16"
+          }
+        ],
+        "/ApiStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/ApiStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/ApiStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/ApiStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "ApiStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
