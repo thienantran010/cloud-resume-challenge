@@ -41,6 +41,7 @@ export class ApiStack extends Stack {
     initializeHitsTable();
 
     const {
+      healthCheckIntegration,
       helloWorldIntegration,
       postHitIntegration,
       getTotalHitsIntegration,
@@ -65,6 +66,9 @@ export class ApiStack extends Stack {
     const messages = api.root.addResource("messages");
     messages.addMethod("GET", getMessagesIntegration);
     messages.addMethod("POST", postMessageIntegration);
+
+    const healthCheck = api.root.addResource("healthcheck");
+    healthCheck.addMethod("GET", healthCheckIntegration);
 
     /*
     this.addCorsOptions(root);
@@ -137,6 +141,13 @@ export class ApiStack extends Stack {
       ...nodeJsFunctionProps,
     });
 
+    // Health Check Lambda
+    const healthCheckLambda = new NodejsFunction(this, "healthCheckFunction", {
+      entry: join(__dirname, "..", "lambda", "healthcheck", "index.ts"),
+      handler: "handler",
+      ...nodeJsFunctionProps,
+    });
+
     this.MessagesTable.grantReadData(getMessagesLambda);
     this.MessagesTable.grantWriteData(postMessageLambda);
 
@@ -145,6 +156,7 @@ export class ApiStack extends Stack {
     const getTotalHitsIntegration = new LambdaIntegration(getTotalHitsLambda);
     const postMessageIntegration = new LambdaIntegration(postMessageLambda);
     const getMessagesIntegration = new LambdaIntegration(getMessagesLambda);
+    const healthCheckIntegration = new LambdaIntegration(healthCheckLambda);
 
     return {
       helloWorldIntegration,
@@ -152,6 +164,7 @@ export class ApiStack extends Stack {
       getTotalHitsIntegration,
       postMessageIntegration,
       getMessagesIntegration,
+      healthCheckIntegration,
     };
   };
 
